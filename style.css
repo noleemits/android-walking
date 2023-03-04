@@ -1,0 +1,178 @@
+:root{
+  --bg: #222;
+  --brand: #aac148;
+  position: relative;  
+}
+.street-wrapper{
+background: linear-gradient( 0.50turn, #542f1f, #5b3321); 
+  background-size: cover;
+  background-position: bottom;
+  height: 50vh;
+  width: 100vw;
+  z-index: 98;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+.street{
+  height: 50vh;
+  width: 400px;
+  position: absolute;
+  background-color: #545454;
+  bottom: 0;
+  z-index: 99;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  animation-name: street;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;  
+}
+.z-position-top{
+  z-index: 999;
+}
+.brand{
+  background-color: var(--brand);  
+}
+.flex-around{
+  display: flex;
+  justify-content: space-around;
+}
+.wrapper{
+  background-image: url(https://img.freepik.com/vector-gratis/mundo-juego-arcade-escena-pixeles_24640-45864.jpg?w=996&t=st=1677900134~exp=1677900734~hmac=b35548f80333830074e2cdccf65128cba30edec562e0cac6fc95ff72b284dc93);
+  animation-name: sky;
+  animation-duration: 20s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite; 
+  animation-delay: .5s;
+   background-repeat: no-repeat;
+  z-index: 50;
+  position: relative;
+  background-color: var(--bg);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ear-container{
+  width: 170px;
+  margin-bottom: -20px;
+}
+.ear{
+  width: 12px;
+  height: 50px;
+  border-radius: 10px;
+}
+.left-ear{
+  transform: rotate(-30deg);
+}
+.right-ear{
+  transform: rotate(30deg);
+}
+.head{  
+  height: 100px;
+  width: 200px;
+  border-radius: 200px 200px 15px 15px;
+  align-items: center;
+}
+.eye{
+  height: 15px;
+  width: 15px;
+  background-color: var(--bg);
+  border-radius: 15px;
+}
+.body-container{
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+.torso{  
+  height: 200px;
+  width: 200px;
+  border-radius: 15px;
+}
+.arm, .foot{
+  width: 50px;
+  height: 160px;  
+  border-radius: 50px;
+}
+.left-arm,.right-foot{
+  animation-name: expand;
+  animation-duration: 1.5s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite; 
+  animation-delay: 0s;
+}
+.right-arm,.left-foot{
+  animation-name: expand;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite; 
+  animation-delay: 750ms;
+}
+
+.feet-container{
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: -50px;
+}
+@keyframes expand{
+  0%{
+    border-radius: 50px;
+    height: 170px;
+  }
+  25%{
+    border-radius:50px 50px 70% 70%;
+    height: 160px;
+  }
+  40%{
+    border-radius:50px 50px 85% 85%;
+    height: 155px
+  }
+  50%{
+    border-radius: 50px 50px 100% 100%;
+    height: 150px;
+  }
+  70%{
+    border-radius:50px 50px 85% 85%;
+    height: 155px
+  }
+  80%{
+    border-radius:50px 50px 70% 70%;
+    height: 160px;
+  }
+   100%{
+    border-radius: 50px;
+    height: 170px;
+  }
+}
+@keyframes street{
+  from{
+    background: repeating-linear-gradient(#4a5b63, #4a5b63 20px, #425159 20px, #425159 25px);
+  }
+  to{
+    background: repeating-linear-gradient(#4a5b63, #4a5b63 30px, #425159 30px, #425159 35px);
+  }
+}
+@keyframes sky{
+  0%{
+    background-size: 110%;
+    background-position: center;
+  }
+  25%{
+    background-size:107%;
+  }
+  50%{
+    background-size:105%;
+  }
+  75%{
+    background-size:103%;
+  }
+  100%{
+    background-size:100%;
+    background-position: top;
+  }
+}
